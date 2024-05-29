@@ -13,8 +13,15 @@ class List : CliktCommand(help = "List all installed games with their file defin
     }
 
     override fun run() {
-        installationManager.getGames().forEach {
-            echo(it.gameName)
+        val games = installationManager.getGames()
+
+        if (games.isNotEmpty()) {
+            games.forEach {
+                echo(it.gameName)
+            }
+        } else {
+            echo("No games found")
         }
+
     }
 }

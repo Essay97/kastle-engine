@@ -1,9 +1,10 @@
 plugins {
-    kotlin("jvm") version "1.9.23"
+    alias(libs.plugins.kotlin)
+    application
 }
 
-group = "io.github.essay97.kastle"
 version = "1.0-SNAPSHOT"
+group = "io.github.essay97"
 
 repositories {
     mavenCentral()
@@ -11,11 +12,18 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation(libs.kastle.lib)
+    implementation(libs.clikt)
+    implementation(libs.kotter)
+    implementation(libs.arrow)
+    implementation(libs.kotlinx.datetime)
 }
 
 tasks.test {
     useJUnitPlatform()
 }
-kotlin {
-    jvmToolchain(17)
+
+application {
+    mainClass.set("io.github.essay97.kastle.MainKt")
+    applicationName = "kastle"
 }
