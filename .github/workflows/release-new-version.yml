@@ -26,6 +26,8 @@ jobs:
           name: package
           path: build/distributions/*.zip
   release:
+    permissions:
+      contents: write
     needs: build
     runs-on: ubuntu-latest
     steps: 
