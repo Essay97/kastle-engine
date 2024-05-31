@@ -24,3 +24,13 @@ jobs:
         with:
           name: package
           path: build/distributions/*.zip
+  release:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+      - name: Create new release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: package/kastle-*.zip
+          body: Test release from GitHub Actions
