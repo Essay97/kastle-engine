@@ -27,3 +27,7 @@ application {
     mainClass.set("io.github.essay97.kastle.MainKt")
     applicationName = "kastle"
 }
+
+kotlin {
+    jvmToolchain(8)
+}
