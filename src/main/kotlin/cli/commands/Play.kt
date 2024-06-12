@@ -23,7 +23,7 @@ class Play : CliktCommand(help = "Start playing with the specified game") {
     }
     private val configurationManager = ConfigurationManager()
 
-    private val gameName by argument()
+    private val gameName by argument(help = "The name that will be used to reference and run the game")
 
     override fun run() {
         /*
