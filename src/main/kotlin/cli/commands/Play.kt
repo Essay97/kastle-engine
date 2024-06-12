@@ -71,8 +71,9 @@ class Play : CliktCommand(help = "Start playing with the specified game") {
                         }
                     )
                 } else {
-                    // TODO: print epilogue
                     section {
+                        textLine(information.epilogue)
+                        textLine()
                         cyan { bold { textLine("You won!") } }
                     }.run()
                     commands.submit(factory.createEndCommand())

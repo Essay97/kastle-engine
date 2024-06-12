@@ -4,7 +4,7 @@ arrow = "1.2.0"
 kotter = "1.1.1"
 clikt = "4.4.0"
 kotlinx-datetime = "0.6.0-RC.2"
-kastle-lib = "0.0.2"
+kastle-lib = "0.1.0"
 [libraries]
 arrow = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow" }
 kotter = { group = "com.varabyte.kotter", name = "kotter-jvm", version.ref = "kotter" }

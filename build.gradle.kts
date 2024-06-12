@@ -3,10 +3,18 @@ plugins {
     application
 }
 
-version = "1.0-SNAPSHOT"
+version = "0.1.0"
 group = "io.github.essay97"
 
 repositories {
+    maven {
+        name = "centralManualTesting"
+        url = uri("https://central.sonatype.com/api/v1/publisher/deployments/download/")
+        credentials(HttpHeaderCredentials::class)
+        authentication {
+            create<HttpHeaderAuthentication>("header")
+        }
+    }
     mavenCentral()
 }
 
